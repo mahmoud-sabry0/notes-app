@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Home from './Components/Home/Home'
+import Login from './Components/Login/Login'
+import Register from './Components/Register/Register'
+import Layout from './Components/Layout/Layout'
+import { RecoilRoot } from 'recoil'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+  let routes= createBrowserRouter([
+    {path:'',element:<Layout/> ,children:[
+    {index:true,element:<Register/>},
+    {path:'login',element:<Login/>},
+    {path:'home',element:<Home/>},
+    ]},
+  ])
+  return<>
+  <RecoilRoot>
+  <RouterProvider router={routes}></RouterProvider>
+  </RecoilRoot>
+  
+  
+  </>
 }
-
-export default App;
