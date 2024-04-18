@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap';
+import { Bounce, Flip, Hinge, JackInTheBox, Slide } from 'react-awesome-reveal';
+import { Button, Fade, Modal } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 export default function Note({note, getUserNotes}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -81,17 +83,20 @@ axios.put(`https://note-sigma-black.vercel.app/api/v1/notes/${note._id}`,values,
         </Modal.Footer>
       </Modal>
      <div className="col-md-6 p-3">
+     <Slide>
         <div>
         <Card style={{ width: '19rem' }}>
         <Card.Body>
         <Card.Title>{note?.title}</Card.Title>
         
         <Card.Text>{note?.content} </Card.Text>
-        <i className="bi bi-pencil-square bi-x1 mx-3" variant="primary" onClick={handleShow}></i>
+        <i className="bi bi-pencil-square bi-x1 mx-3 " variant="primary" onClick={handleShow}></i>
         <i className="bi bi-trash-fill  mx-3" onClick={deletNote}></i>
       </Card.Body>
     </Card>
         </div>
+        </Slide>
+      
     
     </div>
     

@@ -104,6 +104,7 @@ export default function Register() {
                     >
                       Sign In
                     </button>
+                   
                     {signInMsg ? (
                       <p className="text-center">{signInMsg}</p>
                     ) : null}
@@ -115,7 +116,9 @@ export default function Register() {
                     Don't Have Account ? Register
                   </p>
                 </div>
+               
               </div>
+             
             </div>
           </div>
         </div>

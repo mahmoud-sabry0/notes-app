@@ -6,7 +6,7 @@ export default function Layout() {
   let[noteLength,setnoteLength]=useRecoilState(noteState)
 
   return <>
-  <div style={{backgroundColor:"#0DCAF0"}} className='w-100 p-2 text-white text-center '>Notes App : {noteLength}</div>
+  <div style={{backgroundColor:"#0DCAF0"}} className='w-100 p-2 text-white text-center fixed-top'>Notes App : {noteLength}</div>
   <Outlet></Outlet>
   </>
 }
